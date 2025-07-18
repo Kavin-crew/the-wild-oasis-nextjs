@@ -1,0 +1,9 @@
+-To update the next.js version to latest
+npm install next@latest react@latest react-dom@latest eslint-config-next@latest
+
+- To see what pages it belongs in vscode
+go to settings
+check the controls whether...
+add item
+add to the Item - **/app/**/page.js
+add to the Value - PAGE ${dirname}
