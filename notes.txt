@@ -7,3 +7,15 @@ check the controls whether...
 add item
 add to the Item - **/app/**/page.js
 add to the Value - PAGE ${dirname}
+
+-dynamic metadata
+-%s will be overriden the individual title of each pages
+export const metadata = {
+  title: {
+    template: "%s | The Wild Oasis",
+    default: "Welcome to The Wild Oasis",
+  }
+};
+
+-adding fav icon
+add icon with any file format ex. png,jpg etc.
