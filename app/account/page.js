@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Account",
+  title: "Guest Area",
 };
 
-export default function Page() {
+export default function AccountPage() {
   return <div>Account page</div>;
 }

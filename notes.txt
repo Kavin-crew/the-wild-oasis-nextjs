@@ -19,3 +19,13 @@ export const metadata = {
 
 -adding fav icon
 add icon with any file format ex. png,jpg etc.
+
+-adding google fonts
+import { Josefin_Sans } from "next/font/google";
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+in the html
+className={`${josefinSans.className}`}

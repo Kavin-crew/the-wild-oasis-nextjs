@@ -2,6 +2,6 @@ export const metadata = {
   title: "About",
 };
 
-export default function Page() {
+export default function AboutPage() {
   return <div>About page</div>;
 }
