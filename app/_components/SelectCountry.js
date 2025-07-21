@@ -1,16 +1,11 @@
-// // import { getCountries } from "@/app/_lib/data-service";
+// import { getCountries } from '@/app/_lib/data-service';
 
-// // Let's imagine your colleague already built this component 😃
+// Let's imagine your colleague already built this component 😃
 
-// export default async function SelectCountry({
-//   defaultCountry,
-//   name,
-//   id,
-//   className,
-// }) {
+// async function SelectCountry({ defaultCountry, name, id, className }) {
 //   const countries = await getCountries();
 //   const flag =
-//     countries.find((country) => country.name === defaultCountry)?.flag ?? "";
+//     countries.find((country) => country.name === defaultCountry)?.flag ?? '';
 
 //   return (
 //     <select
@@ -20,7 +15,7 @@
 //       defaultValue={`${defaultCountry}%${flag}`}
 //       className={className}
 //     >
-//       <option value="">Select country...</option>
+//       <option value=''>Select country...</option>
 //       {countries.map((c) => (
 //         <option key={c.name} value={`${c.name}%${c.flag}`}>
 //           {c.name}
@@ -30,19 +25,14 @@
 //   );
 // }
 
-export default function SelectCountry({ defaultCountry, name, id, className }) {
+// export default SelectCountry;
+
+
+async function SelectCountry() {
+
   return (
-    <select
-      name={name}
-      id={id}
-      defaultValue={defaultCountry}
-      className={className}
-    >
-      <option value="">Select country...</option>
-      {/* This is a placeholder. In a real app, you would map over an array of countries */}
-      <option value="portugal">Portugal</option>
-      <option value="spain">Spain</option>
-      <option value="france">France</option>
-    </select>
+    <div>countries</div>
   );
 }
+
+export default SelectCountry;

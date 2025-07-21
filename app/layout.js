@@ -1,31 +1,33 @@
+import Header from "@/app/_components/Header";
+import "@/app/_styles/globals.css";
+
 import { Josefin_Sans } from "next/font/google";
-const josefinSans = Josefin_Sans({
+const josefin = Josefin_Sans({
   subsets: ["latin"],
   display: "swap",
+  weight: "400",
 });
 
-import "@/app/_styles/globals.css";
-import Header from "./_components/Header";
-
 export const metadata = {
+  // title: "The wild oasis", //v1
   title: {
-    template: "%s | The Wild Oasis",
-    default: "Welcome to The Wild Oasis",
+    template: "%s - The wild Oasis",
+    default: "Welcome - The Wild Oasis",
   },
   description:
-    "Luxury hotel cabin in the heart of nature. Experience the wild like never before.",
+    "Luxurious cabin hotel, located if the heart of Italian Dolomites, surrounderd by beautiful mountains and dark forest",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${josefinSans.className} bg-primary-950 text-primary-100  min-h-screen flex flex-col relative`}
+        className={`${josefin.className} antialiased text-primary-100 bg-primary-950 min-h-screen flex flex-col relative`}
       >
         <Header />
-        <section className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full grid">{children}</main>
-        </section>
+        <div className="flex-1 px-8 py-12 grid">
+          <main className="max-w-7xl mx-auto w-full">{children}</main>
+        </div>
       </body>
     </html>
   );

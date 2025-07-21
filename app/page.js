@@ -7,10 +7,11 @@ export default function HomePage() {
     <main className="mt-24 h-full">
       <Image
         src={BackgroundImg}
-        alt="Mountains and forests with two cabins"
         fill
-        placeholder="blur"
+        alt="Mountains and forests with two cabins"
+        // style={{ objectFit: "cover" }}
         className="object-cover object-top"
+        placeholder="blur"
       />
 
       <div className="relative z-10 text-center">

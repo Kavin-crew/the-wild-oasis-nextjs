@@ -20,7 +20,6 @@ export default function Navigation() {
             Cabins
           </Link>
         </li>
-
         <li>
           <Link
             href="/account"
