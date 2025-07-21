@@ -7,7 +7,7 @@ export const formatDistanceFromNow = (dateStr) =>
     addSuffix: true,
   }).replace('about ', '');
 
-function ReservationCard({ booking }) {
+export default function ReservationCard({ booking }) {
   const {
     id,
     guestId,
@@ -80,5 +80,3 @@ function ReservationCard({ booking }) {
     </div>
   );
 }
-
-export default ReservationCard;

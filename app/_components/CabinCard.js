@@ -2,7 +2,7 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-function CabinCard({ cabin }) {
+export default function CabinCard({ cabin }) {
   const { _id: id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
@@ -58,5 +58,3 @@ function CabinCard({ cabin }) {
     </div>
   );
 }
-
-export default CabinCard;
