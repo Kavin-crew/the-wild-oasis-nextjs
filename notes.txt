@@ -1,31 +1,44 @@
 -To update the next.js version to latest
-npm install next@latest react@latest react-dom@latest eslint-config-next@latest
+  npm install next@latest react@latest react-dom@latest eslint-config-next@latest
 
-- To see what pages it belongs in vscode
-go to settings
-check the controls whether...
-add item
-add to the Item - **/app/**/page.js
-add to the Value - PAGE ${dirname}
+-To see what pages it belongs in vscode
+    go to settings
+    check the controls whether...
+    add item
+    add to the Item - **/app/**/page.js
+    add to the Value - PAGE ${dirname}
 
 -dynamic metadata
 -%s will be overriden the individual title of each pages
-export const metadata = {
-  title: {
-    template: "%s | The Wild Oasis",
-    default: "Welcome to The Wild Oasis",
-  }
-};
+
+  export const metadata = {
+    title: {
+      template: "%s | The Wild Oasis",
+      default: "Welcome to The Wild Oasis",
+    }
+  };
 
 -adding fav icon
-add icon with any file format ex. png,jpg etc.
+  add icon with any file format ex. png,jpg etc.
 
 -adding google fonts
-import { Josefin_Sans } from "next/font/google";
-const josefinSans = Josefin_Sans({
-  subsets: ["latin"],
-  display: "swap",
-});
+  import { Josefin_Sans } from "next/font/google";
+  const josefinSans = Josefin_Sans({
+    subsets: ["latin"],
+    display: "swap",
+  });
 
-in the html
-className={`${josefinSans.className}`}
+  in the html
+  className={`${josefinSans.className}`}
+
+-Suspense - it only Suspense the components that mostly fetching data
+  other than the suspense, it will display the other components by default
+  while the components inside the suspense will be displayed once promise is fulfilled
+
+<Suspense fallback={<Spinner/>}>
+  <Cabinlist />
+</Suspense>
+
+-error boundery
+  always a client component and has access to error and reset parameter
+  it will not catch an error to any root level error
