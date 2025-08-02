@@ -128,3 +128,14 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+///////////////////////////
+//caching
+///////////////////////////
+- in route level
+    export const revalidate = 0; // turn off data and full page caching
+
+    -Incremental Static Regeneration (ISR) - the data will be updated after the time duration
+    export const revalidate = 0; // just adjust the numbers base on seconds
+
+- in component level

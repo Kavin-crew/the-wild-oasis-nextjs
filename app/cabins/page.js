@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import CabinList from "@/app/_components/CabinList";
 import Spinner from "@/app/_components/Spinner";
 
+export const revalidate = 3600; // cache for 1hour (3600 seconds)
+
 export const metadata = {
   title: "Cabins",
 };

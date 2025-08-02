@@ -1,8 +1,10 @@
+// import { unstable_noStore as noStore } from "next/cache";
 import connectDB from "@/config/database";
 import Cabin from "@/models/Cabin";
 import CabinCard from "@/app/_components/CabinCard";
 
 export default async function CabinList() {
+  // noStore(); // Prevent caching for this component
   await connectDB();
   const cabins = await Cabin.find({}).lean();
 

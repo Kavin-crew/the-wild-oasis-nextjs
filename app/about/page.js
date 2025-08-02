@@ -1,13 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import AboutImg1 from "@/public/about-1.jpg"
-import AboutImg2 from "@/public/about-2.jpg"
+import AboutImg1 from "@/public/about-1.jpg";
+import AboutImg2 from "@/public/about-2.jpg";
+import { getCabins } from "../_lib/data-service";
+
+export const revalidate = 86400; // cache for 1day (86400 seconds)
 
 export const metadata = {
   title: "About",
 };
 
-export default function Page() {
+export default async function Page() {
+  const cabins = await getCabins();
+  const totalCabins = cabins.length;
+
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
@@ -24,10 +30,10 @@ export default function Page() {
             simple pleasures with family.
           </p>
           <p>
-            Our 8 luxury cabins provide a cozy base, but the real freedom and
-            peace you'll find in the surrounding mountains. Wander through lush
-            forests, breathe in the fresh air, and watch the stars twinkle above
-            from the warmth of a campfire or your hot tub.
+            Our {totalCabins} luxury cabins provide a cozy base, but the real
+            freedom and peace you'll find in the surrounding mountains. Wander
+            through lush forests, breathe in the fresh air, and watch the stars
+            twinkle above from the warmth of a campfire or your hot tub.
           </p>
           <p>
             This is where memorable moments are made, surrounded by nature's
@@ -49,11 +55,12 @@ export default function Page() {
 
       <div className="col-span-2 relative aspect-square">
         <Image
-        src={AboutImg2} 
-        fill
-        placeholder="blur"
-        alt="Family that manages The Wild Oasis"
-         className="object-cover" />
+          src={AboutImg2}
+          fill
+          placeholder="blur"
+          alt="Family that manages The Wild Oasis"
+          className="object-cover"
+        />
       </div>
 
       <div className="col-span-3">
