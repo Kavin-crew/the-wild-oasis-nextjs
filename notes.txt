@@ -133,9 +133,28 @@ export default nextConfig;
 //caching
 ///////////////////////////
 - in route level
+    🔸 Limitations:
+    Less granular – can't cache individual components or parts of a page.
+    Any change requires re-rendering the whole page.
+
     export const revalidate = 0; // turn off data and full page caching
 
     -Incremental Static Regeneration (ISR) - the data will be updated after the time duration
     export const revalidate = 0; // just adjust the numbers base on seconds
 
 - in component level
+    export const revalidate = 0; // same with route level
+
+| Feature         | Route-Level Caching           | Component-Level Caching             |
+| --------------- | ----------------------------- | ----------------------------------- |
+| Scope           | Entire page/route             | Individual component/data fetch     |
+| Best for        | SSG/ISR/SSR pages             | Shared data or expensive components |
+| Setup           | `revalidate`, `fetch()` cache | `React.cache()`, `memo()`           |
+| Flexibility     | Less flexible                 | Highly flexible                     |
+| Rendering reuse | Page-wide                     | Component-specific                  |
+
+///////////////////////////
+//pathname custom hook
+///////////////////////////
+-to get the current url/slug
+  const pathname = usePathname();
